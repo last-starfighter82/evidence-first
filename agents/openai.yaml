@@ -1,0 +1,6 @@
+interface:
+  display_name: "Evidence First"
+  short_description: "Reduce redundant coding reads; preserve checks"
+  default_prompt: "Use $evidence-first for this focused code change. Preserve requirements and verify the result."
+policy:
+  allow_implicit_invocation: true
