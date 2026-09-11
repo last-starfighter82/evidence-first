@@ -2,7 +2,7 @@
 
 **Give your coding agent the evidence it needs in fewer steps.**
 
-Evidence First is a small instruction-only skill for focused code fixes. When a task names source files, it tells the agent to read those files, nearby tests and project instructions together, reuse what it already knows, and run the complete appropriate checks.
+Evidence First is a small instruction-only AI coding agent skill for focused code fixes. When a task names source files, it tells the agent to read those files, nearby tests and project instructions together, reuse what it already knows, and run the complete appropriate checks.
 
 No extra service, model download or API key required by the skill. Your coding agent still needs its normal setup.
 
@@ -29,7 +29,13 @@ Use evidence-first to fix the retry behavior in retry.py.
 Preserve error handling and run the relevant tests.
 ```
 
-You can also ask an agent with local file access to read `SKILL.md` and apply it to a specific task. Installation and automatic discovery depend on your agent. The experiments described here used Codex; other agents have not been benchmarked for this package.
+You can also ask an agent with local file access to read `SKILL.md` and apply it to a specific task. Installation and automatic discovery depend on your agent.
+
+## Compatibility
+
+Tested with Codex. The instructions can also be used in Claude Code and other agents that support skills, but token savings have not been verified on those agents.
+
+This is an instruction-only package, not a provider integration. Follow your agent's own skill installation process; compatibility does not imply identical behavior or measured savings.
 
 ## How it works
 
