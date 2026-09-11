@@ -18,18 +18,75 @@ Suppose you ask: "Fix retries in `retry.py` and preserve the existing error hand
 
 This illustrates the intended workflow. It is not a measured trace or a promise that every task needs fewer calls. When paths or requirements are unclear, the agent still investigates.
 
-## Use it
+## Install
 
-Install this folder through your agent's local skill installation process. Keep `SKILL.md`, `agents/` and `references/` together under the folder name `evidence-first`.
+Requires Git and an installed coding agent. Choose the instructions for your agent. These commands install for your current OS user and leave existing installs untouched: Git refuses to clone into an occupied destination.
 
-Then ask:
+### Codex
 
-```text
-Use evidence-first to fix the retry behavior in retry.py.
-Preserve error handling and run the relevant tests.
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/last-starfighter82/evidence-first.git "$HOME/.agents/skills/evidence-first"
 ```
 
-You can also ask an agent with local file access to read `SKILL.md` and apply it to a specific task. Installation and automatic discovery depend on your agent.
+macOS or Linux:
+
+```bash
+git clone https://github.com/last-starfighter82/evidence-first.git ~/.agents/skills/evidence-first
+```
+
+Start a new Codex session, then use:
+
+```text
+Use $evidence-first to fix retry.py. Preserve error handling and run the relevant tests.
+```
+
+Codex discovers user skills in `.agents/skills` under your home directory. See [Codex skill locations](https://learn.chatgpt.com/docs/build-skills).
+
+### Claude Code
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/last-starfighter82/evidence-first.git "$HOME/.claude/skills/evidence-first"
+```
+
+macOS or Linux:
+
+```bash
+git clone https://github.com/last-starfighter82/evidence-first.git ~/.claude/skills/evidence-first
+```
+
+Start a new Claude Code session, then use:
+
+```text
+/evidence-first Fix retry.py. Preserve error handling and run the relevant tests.
+```
+
+Claude Code discovers personal skills in `.claude/skills` under your home directory. See [Claude Code skill installation](https://code.claude.com/docs/en/skills).
+
+### Install for one project
+
+From the project root, clone into `.agents/skills/evidence-first` for Codex or `.claude/skills/evidence-first` for Claude Code instead. Choose either personal or project installation to avoid duplicate copies.
+
+### Without Git
+
+Download this repository using **Code > Download ZIP** on GitHub. Extract it, rename the extracted folder to `evidence-first`, and place it in your agent's skill directory listed above. `SKILL.md` must be directly inside `evidence-first`, with `agents/` and `references/` alongside it.
+
+### Update
+
+For a Git installation, run the matching command in PowerShell, macOS or Linux:
+
+```text
+# Codex
+git -C "$HOME/.agents/skills/evidence-first" pull --ff-only
+
+# Claude Code
+git -C "$HOME/.claude/skills/evidence-first" pull --ff-only
+```
+
+For a project installation, use its project-relative directory. Preserve any local customizations before updating. ZIP installations require downloading a new copy. Start a new agent session after updating.
 
 ## Compatibility
 
